@@ -1,0 +1,28 @@
+@import "mediaqueries";
+
+.mat-form-field{
+    width: 500px;
+}
+h1{
+    text-align: center;
+    text-transform: uppercase;
+}
+.button-container {
+    button{
+        background: #35e;
+        color:#fff;
+    }
+    button + button{
+        background:#356;
+        margin-left: 10px;
+    }
+}
+@include respond-below(md){
+    .mat-form-field{
+        width: 100%;
+    }
+}
+
+
+
+
