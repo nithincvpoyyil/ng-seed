@@ -1,0 +1,24 @@
+:host {
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    border: 4px #cccccc4d solid;
+    padding: 30px;
+    position: relative;
+    a {
+        position: absolute;
+        width: calc(100% - 60px);
+        height: calc(100% - 60px);
+        text-align: center;
+        span {
+            display:inline-block;
+            &.fa {
+                width:100%;
+                margin:20px 0;
+                font-size:4rem
+            
+            }
+        }
+    }
+}
+

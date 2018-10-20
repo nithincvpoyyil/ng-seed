@@ -1,6 +1,10 @@
+
+<section class="landing-page-heading"><h1>Please select and Option</h1></section>
+
 <section class="landing-page">
-  <section class="heading"></section>
- <section class="menu-list" >
-    <emp-card-tile *ngFor="let menuItem of menuList" [menuItem]="menuItem"> </emp-card-tile>
- </section>
+  <section class="menu-list" fxLayout="row" fxLayout.xs="column" fxLayoutAlign="center center" fxFlex.xs="100" fxFlex.sm="100" fxFlex.md="100" fxFlex.lg="100">
+    <ng-container *ngFor="let menuItem of menuList">
+      <emp-card-tile [menuItem]="menuItem"> </emp-card-tile>
+    </ng-container>
+  </section>
 </section>
