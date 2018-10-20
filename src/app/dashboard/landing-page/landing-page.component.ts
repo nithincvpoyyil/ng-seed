@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import menuList from './menu.config';
+import { MenuItem } from '../../core';
 @Component({
   selector: 'emp-landing-page',
   templateUrl: './landing-page.component.html',
@@ -7,7 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LandingPageComponent implements OnInit {
 
-  constructor() { }
+  menuList: MenuItem[];
+  constructor() {
+    this.menuList = menuList;
+  }
 
   ngOnInit() {
   }
