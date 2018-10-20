@@ -2,7 +2,16 @@
 
 import { MenuItem } from '../../core';
 
-let menuList: MenuItem[];
+const menuList: MenuItem[] = <MenuItem[]>[{
+    icon: 'fa fa-list',
+    title: 'LIST RECORDS',
+    summary: '',
+    link: '/list'
+},{
+    icon: 'fa fa-plus-square-o',
+    title: 'ADD A RECORD',
+    summary: '',
+    link: '/add'
+}];
 
-export default menuList = [{ icon: 'fa fa-cogs', title: 'CREATE', summary: '' },
-                           { icon: 'fa fa-create', title: 'LIST', summary: '' }];
+export default menuList;

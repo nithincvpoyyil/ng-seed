@@ -1,9 +1,18 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { LandingPageComponent} from '../dashboard/landing-page/landing-page.component';
+import { RecordListComponent } from './record-list/record-list.component';
+import { DetailedRecordComponent } from './detailed-record/detailed-record.component';
 
 const listRecordsRoutes: Routes = [
+  {
+    path: '',
+    component: RecordListComponent,
+    children: [{
+      path: ':id',
+      component: DetailedRecordComponent
+    }]
+  }
 ];
 
 @NgModule({
@@ -13,4 +22,4 @@ const listRecordsRoutes: Routes = [
   ],
   exports: [RouterModule]
 })
-export class ListRecordsRoutingModule {}
+export class ListRecordsRoutingModule { }

@@ -1,19 +1,26 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { LandingPageComponent} from '../dashboard/landing-page/landing-page.component';
+import { LandingPageComponent } from '../dashboard/landing-page/landing-page.component';
 
 const appRoutes: Routes = [
   {
     path: '',
-    redirectTo: '/home',
+    redirectTo: 'home',
     pathMatch: 'full'
   },
   {
     path: 'home',
     component: LandingPageComponent
   },
-  { path: '**', redirectTo: 'home' }
+  {
+    path: 'list',
+    loadChildren: '../list-records/list-records.module#ListRecordsModule'
+  },
+  {
+    path: 'add',
+    loadChildren: '../create-records/create-records.module#CreateRecordsModule'
+  }
 ];
 
 @NgModule({
@@ -24,4 +31,4 @@ const appRoutes: Routes = [
   exports: [RouterModule],
   declarations: []
 })
-export class RoutingModule {}
+export class RoutingModule { }
