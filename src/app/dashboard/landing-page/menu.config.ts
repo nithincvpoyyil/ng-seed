@@ -4,7 +4,7 @@ import { MenuItem } from '../../core';
 
 const menuList: MenuItem[] = <MenuItem[]>[{
     icon: 'fa fa-list',
-    title: 'LIST RECORDS',
+    title: 'LIST OF RECORDS',
     summary: '',
     link: '/list'
 },{
