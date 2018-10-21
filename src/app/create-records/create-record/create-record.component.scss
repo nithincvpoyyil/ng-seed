@@ -12,14 +12,32 @@ h1{
         background: #35e;
         color:#fff;
     }
+    button:disabled{
+        background:#ccc;
+        color:#444;
+    }
     button + button{
         background:#356;
         margin-left: 10px;
     }
 }
+
+form{
+    flex-direction: column;
+    box-sizing: border-box;
+    display: flex;
+    max-width: 100%;
+    place-content: center;
+    align-items: center;
+}
+
 @include respond-below(md){
     .mat-form-field{
         width: 100%;
+    }
+
+    form{
+        width:100%;
     }
 }
 

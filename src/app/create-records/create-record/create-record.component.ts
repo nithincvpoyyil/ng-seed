@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
+import { FormControl, Validators, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ApiService } from '../../core/api.service';
+import { Record } from '../../core/models';
 
 @Component({
   selector: 'emp-create-record',
@@ -9,19 +11,42 @@ import { Router } from '@angular/router';
 })
 export class CreateRecordComponent implements OnInit {
 
-  email = new FormControl('', [Validators.required, Validators.email]);
-  constructor(private router: Router) { }
+  email: FormControl;
+  name: FormControl;
+  address: FormControl;
+  dob: FormControl;
+  about: FormControl;
+  recordForm: FormGroup;
+
+  constructor(private router: Router, private api: ApiService) {
+
+    this.email = new FormControl('', [Validators.required, Validators.email]);
+    this.name = new FormControl('');
+    this.address = new FormControl('');
+    this.dob = new FormControl('');
+    this.about = new FormControl('');
+
+    this.recordForm = new FormGroup({
+      email: this.email,
+      name: this.name,
+      address: this.name,
+      dob: this.dob,
+      about: this.about
+    });
+  }
 
   ngOnInit() {
 
   }
 
   navigateToHome() {
-    this.router.navigateByUrl("/home");
+    this.router.navigateByUrl('/home');
   }
 
   submitRecord() {
-
+    this.api.addRecord(<Record>this.recordForm.value).subscribe(() => {
+      console.log("executed");
+    });
   }
 
   getErrorMessage() {

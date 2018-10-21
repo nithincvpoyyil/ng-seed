@@ -4,23 +4,37 @@
   </span>
   <section class="new-employee-record-form" class="container" fxLayout="column" fxLayoutAlign="center center">
 
-    <mat-form-field>
-      <input matInput placeholder="Enter your email" [formControl]="email" required>
-      <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
-    </mat-form-field>
+    <form [formGroup]="recordForm">
 
-    <mat-form-field>
-      <input matInput placeholder="Enter your name">
-    </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Enter your email" [formControl]="email" required>
+        <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+      </mat-form-field>
 
-    <mat-form-field>
-      <input matInput [matDatepicker]="picker" placeholder="Please enter D.O.B">
-      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-      <mat-datepicker #picker></mat-datepicker>
-    </mat-form-field>
-    <div class="button-container">
-      <button mat-flat-button (click)="submitRecord()">Submit</button >  <button mat-flat-button (click)="navigateToHome()">Cancel</button >
-    </div>
+      <mat-form-field>
+        <input matInput placeholder="Enter your name" [formControl]="name">
+      </mat-form-field>
+
+      <mat-form-field>
+        <textarea matInput placeholder="Enter your address" [formControl]="address"></textarea>
+      </mat-form-field>
+
+      <mat-form-field>
+          <textarea matInput placeholder="About you" [formControl]="about"></textarea>
+        </mat-form-field>
+
+      <mat-form-field>
+        <input matInput [matDatepicker]="picker" placeholder="Please enter D.O.B" [formControl]="dob">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+
+      <div class="button-container">
+        <button type="button" [disabled]="!recordForm.valid" mat-flat-button (click)="submitRecord()" >Submit</button> <button mat-flat-button
+          (click)="navigateToHome()">Cancel</button>
+      </div>
+    </form>
+
   </section>
 
   <router-outlet></router-outlet>
