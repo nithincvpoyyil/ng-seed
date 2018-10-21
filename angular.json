@@ -24,14 +24,18 @@
             "tsConfig": "src/tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/manifest.json"
             ],
             "styles": [
               "src/styles/styles.scss"
             ],
-
             "stylePreprocessorOptions": {
-              "includePaths": ["src/", "src/mixins/","src/styles/"]
+              "includePaths": [
+                "src/",
+                "src/mixins/",
+                "src/styles/"
+              ]
             },
             "scripts": []
           },
@@ -51,7 +55,8 @@
               "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
-              "buildOptimizer": true
+              "buildOptimizer": true,
+              "serviceWorker": true
             }
           }
         },
@@ -85,7 +90,8 @@
             "scripts": [],
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/manifest.json"
             ]
           }
         },
