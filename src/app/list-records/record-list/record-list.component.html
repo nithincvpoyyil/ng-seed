@@ -1,4 +1,41 @@
-<section>
-  List view for the 
-  <router-outlet></router-outlet>
+<section class="detail-view-container">
+
+  <section class="top-section">
+    <h1>RECORD LIST</h1>
+  </section>
+ 
+  <section class="list-view">
+    <section class="table-top-section">
+        <button class="" mat-flat-button (click)="navigateToHome()">BACK</button>
+    </section>
+    <table mat-table [dataSource]="dataSource$|async">
+      <ng-container matColumnDef="index">
+          <th mat-header-cell *matHeaderCellDef>No.</th>
+          <td mat-cell *matCellDef="let record;let i = index;"> {{i+1}}</td>
+        </ng-container>
+
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef>Name</th>
+        <td mat-cell *matCellDef="let record"> {{record.name}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="email">
+        <th mat-header-cell *matHeaderCellDef> Email </th>
+        <td mat-cell *matCellDef="let record"> <span class="email-record">{{record.email}} </span>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="dob">
+        <th mat-header-cell *matHeaderCellDef> D.O.B </th>
+        <td mat-cell *matCellDef="let record"> {{getFormattedDate(record.dob)}} </td>
+      </ng-container> 
+
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;let i = index;"></tr>
+    </table>
+  </section>
+  <section class="detailed-view">
+    <router-outlet></router-outlet>
+  </section>
 </section>

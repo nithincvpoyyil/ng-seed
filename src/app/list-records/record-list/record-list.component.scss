@@ -1,0 +1,37 @@
+
+
+@import "mediaqueries";
+
+h1{
+    text-align: center;
+}
+button{
+    color:#fff;
+    background: #35e;
+    padding:5px;
+}
+
+.list-view {
+    position: relative;
+    width: 100%;
+    max-height: 600px;
+    overflow: auto;
+}
+
+table ,.table-top-section{
+    width:800px;
+    left: 50%;
+    transform: translate(-50%,0);
+    position: relative;
+    transition: all 0.3s ease-in;
+}
+
+
+@include respond-below(md){
+    .table-top-section,table{
+        width:100%;
+        min-width: 500px;
+        left: 0;
+        transform: translate(0,0);
+    }
+}

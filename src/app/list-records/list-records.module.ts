@@ -7,9 +7,11 @@ import { RecordListComponent } from './record-list/record-list.component';
 import { RecordComponent } from './record/record.component';
 import { DetailedRecordComponent } from './detailed-record/detailed-record.component';
 
+import { CoreModule } from '../core';
+
 @NgModule({
   imports: [
-    CommonModule, ListRecordsRoutingModule, MaterialModule
+    CommonModule, ListRecordsRoutingModule, MaterialModule,CoreModule
   ],
   exports: [RecordListComponent, RecordComponent, DetailedRecordComponent],
   declarations: [RecordListComponent, RecordComponent, DetailedRecordComponent]
