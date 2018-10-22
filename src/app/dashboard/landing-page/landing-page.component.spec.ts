@@ -20,6 +20,7 @@ describe('LandingPageComponent', () => {
   });
 
   it('should create', () => {
+    component.menuList = [];
     expect(component).toBeTruthy();
   });
 });
