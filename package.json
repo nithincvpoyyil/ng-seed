@@ -10,7 +10,8 @@
     "e2e": "ng e2e",
     "mock-server": "node ./src/json-server/server.js",
     "dev-proxy": "ng serve --proxy-config proxy.conf.json",
-    "dev": "concurrently --kill-others \"npm run mock-server\" \"npm run dev-proxy\""
+    "dev": "concurrently --kill-others \"npm run mock-server\" \"npm run dev-proxy\"",
+    "compodoc": "./node_modules/.bin/compodoc -p src/tsconfig.app.json"
   },
   "private": true,
   "dependencies": {
@@ -28,6 +29,7 @@
     "@angular/pwa": "^0.10.2",
     "@angular/router": "^7.0.0",
     "@angular/service-worker": "^7.0.0",
+    "compodoc": "^0.0.41",
     "concurrently": "^4.0.1",
     "core-js": "^2.5.4",
     "font-awesome": "^4.7.0",
