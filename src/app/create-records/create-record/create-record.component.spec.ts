@@ -6,7 +6,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { APP_BASE_HREF } from '@angular/common';
 import { CoreModule } from 'src/app/core';
-import { ApiService } from 'src/app/core/api.service';
+import { ApiService } from 'src/app/core/api/api.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('CreateRecordComponent', () => {

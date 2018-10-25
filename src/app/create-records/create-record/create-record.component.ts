@@ -1,15 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormControl, Validators, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
-import { ApiService } from '../../core/api.service';
+import { ApiService } from '../../core/api/api.service';
 import { Record } from '../../core/models';
+import { Observable, Subscription } from 'rxjs';
 
 @Component({
   selector: 'emp-create-record',
   templateUrl: './create-record.component.html',
   styleUrls: ['./create-record.component.scss']
 })
-export class CreateRecordComponent implements OnInit {
+export class CreateRecordComponent implements OnInit, OnDestroy {
 
   email: FormControl;
   name: FormControl;
@@ -17,6 +18,8 @@ export class CreateRecordComponent implements OnInit {
   dob: FormControl;
   about: FormControl;
   recordForm: FormGroup;
+  addRecord$: Observable<any>;
+  addRecordSubscription: Subscription;
 
   constructor(private router: Router, private api: ApiService) {
 
@@ -25,7 +28,6 @@ export class CreateRecordComponent implements OnInit {
     this.address = new FormControl('');
     this.dob = new FormControl('');
     this.about = new FormControl('');
-
     this.recordForm = new FormGroup({
       email: this.email,
       name: this.name,
@@ -44,9 +46,11 @@ export class CreateRecordComponent implements OnInit {
   }
 
   submitRecord() {
-    this.api.addRecord(<Record>this.recordForm.value).subscribe(() => {
-      console.log("executed");
-    });
+    this.addRecord$ = this.api.addRecord(<Record>this.recordForm.value);
+    this.addRecordSubscription = this.addRecord$.subscribe();
+  }
+  ngOnDestroy() {
+    this.addRecordSubscription.unsubscribe();
   }
 
   getErrorMessage() {

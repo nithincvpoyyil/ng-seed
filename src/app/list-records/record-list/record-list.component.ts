@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ApiService } from 'src/app/core/api.service';
+import { ApiService } from 'src/app/core/api/api.service';
 import { Observable } from 'rxjs';
 import { Record } from 'src/app/core';
 import * as moment from 'moment';

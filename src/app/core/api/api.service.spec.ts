@@ -1,8 +1,7 @@
-import { TestBed } from '@angular/core/testing';
-import { defer, of } from 'rxjs';
 
+import { defer, of } from 'rxjs';
 import { ApiService } from './api.service';
-import { Record } from './models';
+import { Record } from '../models';
 
 let service: ApiService;
 let httpClientSpy: { get: jasmine.Spy, post: jasmine.Spy };
