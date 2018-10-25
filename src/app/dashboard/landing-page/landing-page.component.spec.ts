@@ -1,6 +1,10 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterModule } from '@angular/router';
+import { CommonModule, APP_BASE_HREF } from '@angular/common';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { LandingPageComponent } from './landing-page.component';
+import { CardTileComponent } from '../card-tile/card-tile.component';
 
 describe('LandingPageComponent', () => {
   let component: LandingPageComponent;
@@ -8,9 +12,11 @@ describe('LandingPageComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ LandingPageComponent ]
+      declarations: [LandingPageComponent, CardTileComponent],
+      imports: [CommonModule, RouterModule.forRoot([]), FlexLayoutModule],
+      providers: [{ provide: APP_BASE_HREF, useValue: '/' }]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

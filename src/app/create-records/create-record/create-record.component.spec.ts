@@ -1,6 +1,13 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CreateRecordComponent } from './create-record.component';
+import { MaterialModule } from 'src/app/material/material.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
+import { APP_BASE_HREF } from '@angular/common';
+import { CoreModule } from 'src/app/core';
+import { ApiService } from 'src/app/core/api.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('CreateRecordComponent', () => {
   let component: CreateRecordComponent;
@@ -8,9 +15,11 @@ describe('CreateRecordComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CreateRecordComponent ]
+      declarations: [CreateRecordComponent],
+      imports: [MaterialModule, BrowserAnimationsModule,FormsModule, CoreModule, ReactiveFormsModule, RouterModule.forRoot([])],
+      providers: [{ provide: APP_BASE_HREF, useValue: '/' }, ApiService],
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

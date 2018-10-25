@@ -1,6 +1,10 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { RecordListComponent } from './record-list.component';
+import { RouterModule } from '@angular/router';
+import { MaterialModule } from 'src/app/material/material.module';
+import { APP_BASE_HREF } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('RecordListComponent', () => {
   let component: RecordListComponent;
@@ -8,9 +12,11 @@ describe('RecordListComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ RecordListComponent ]
+      declarations: [RecordListComponent],
+      imports: [RouterModule.forRoot([]), MaterialModule,HttpClientModule],
+      providers: [{ provide: APP_BASE_HREF, useValue: '/' }],
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

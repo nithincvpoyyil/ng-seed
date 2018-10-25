@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { RoutingModule } from './routing/app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,7 +12,8 @@ import { environment } from '../environments/environment';
     AppComponent
   ],
   imports: [
-    BrowserModule, BrowserAnimationsModule, DashboardModule, RoutingModule, ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
+    BrowserModule, BrowserAnimationsModule, DashboardModule, RoutingModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],
   bootstrap: [AppComponent]

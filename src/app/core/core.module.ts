@@ -8,6 +8,7 @@ import { HttpModule } from '@angular/http';
     CommonModule, HttpModule, HttpClientModule
   ],
   declarations: [],
+  exports: [],
   providers: [ApiService]
 })
 export class CoreModule { }
