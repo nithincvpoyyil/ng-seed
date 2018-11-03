@@ -11,7 +11,7 @@ import { CoreModule } from '../core';
 
 @NgModule({
   imports: [
-    CommonModule, ListRecordsRoutingModule, MaterialModule,CoreModule
+    CommonModule, ListRecordsRoutingModule, MaterialModule, CoreModule
   ],
   exports: [RecordListComponent, RecordComponent, DetailedRecordComponent],
   declarations: [RecordListComponent, RecordComponent, DetailedRecordComponent]

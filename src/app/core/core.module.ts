@@ -1,14 +1,20 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ApiService } from './api/api.service';
-import { HttpClientModule } from '@angular/common/http';
-import { HttpModule } from '@angular/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { APIInterceptorService } from './api/apiinterceptor.service';
 @NgModule({
   imports: [
-    CommonModule, HttpModule, HttpClientModule
+    CommonModule, HttpClientModule
   ],
   declarations: [],
   exports: [],
-  providers: [ApiService]
+  providers: [ApiService, {
+    // Defined interceptor provider here becoz of lazy loaded module;
+    // Please see this link https://github.com/angular/angular/issues/20575 for more details
+    provide: HTTP_INTERCEPTORS,
+    useClass: APIInterceptorService,
+    multi: true
+  }]
 })
 export class CoreModule { }

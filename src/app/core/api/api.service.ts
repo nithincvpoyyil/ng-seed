@@ -10,10 +10,7 @@ import { Observable } from 'rxjs';
 })
 export class ApiService {
 
-  interceptorSkippingHttpClient: HttpClient;
-
-  constructor(private httpClient: HttpClient, handler: HttpBackend) {
-    this.interceptorSkippingHttpClient = new HttpClient(handler);
+  constructor(private httpClient: HttpClient) {
   }
 
   getRecords(): Observable<Record[]> {

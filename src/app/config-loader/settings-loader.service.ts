@@ -41,7 +41,7 @@ export class SettingsLoaderService {
    * fetch inital configuration from server based on some default - constant URL as show below
    */
   fetchBaseURLFromserver(): Promise<any> {
-    return this.interceptorSkippingHttpClient.get(`${DEFAULT_BASE_URL}/apiurl`).pipe(retry(5),catchError(this.handleError))
+    return this.interceptorSkippingHttpClient.get(`${DEFAULT_BASE_URL}/apiurl`).pipe(retry(5))
     .toPromise().then((apiURL: string) => {
       this.apiURL = apiURL;
       return apiURL;
@@ -53,7 +53,7 @@ export class SettingsLoaderService {
   anyAsyncFunction(): Promise<any> {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
-        console.log('APP_INITIALISER Recieved output of an async operation');
+        console.log('APP_INITIALISER : Recieved output of an async operation');
         resolve();
       }, 3000);
     });

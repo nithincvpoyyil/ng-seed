@@ -95,8 +95,24 @@
       "dob": "2018-10-23T13:00:00.000Z",
       "about": "ssss",
       "id": 12
+    },
+    {
+      "email": "nithincv1@gmail.com",
+      "name": "Nithin CV",
+      "address": "Nithin CV",
+      "dob": "2018-11-08T13:00:00.000Z",
+      "about": "gg",
+      "id": 13
     }
   ],
-  "apikey":[{"key":"1234567"}],
-  "apiurl":[{"key":"/fsssfs/aas"}]
+  "apikey": [
+    {
+      "key": "1234567"
+    }
+  ],
+  "apiurl": [
+    {
+      "key": "/fsssfs/aas"
+    }
+  ]
 }
