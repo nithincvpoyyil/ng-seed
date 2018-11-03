@@ -46,7 +46,7 @@ export class CreateRecordComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    this.addRecordSubscription.unsubscribe();
+    if (this.addRecordSubscription) { this.addRecordSubscription.unsubscribe(); }
   }
   onformSubmit(event) {
     event.preventDefault();
