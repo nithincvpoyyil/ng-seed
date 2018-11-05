@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpInterceptor, HttpRequest, HttpHandler, HttpEvent, HttpResponse } from '@angular/common/http';
 import { } from 'rxjs/add/operator/do';
-import { Observable, of, do } from 'rxjs';
+import { Observable} from 'rxjs';
 import { tap } from 'rxjs/operators';
 
 
