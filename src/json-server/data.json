@@ -1,52 +1,13 @@
 {
   "records": [
     {
-      "email": "nithincv1@gmail.com",
-      "name": "nithin cv",
-      "address": "20-34 Albert Road",
-      "dob": "1999-10-23T13:00:00.000Z",
-      "about": "Hope is a good thing",
-      "id": 1
-    },
-    {
-      "email": "John@gmail.com",
-      "name": "John H",
-      "address": "John H",
-      "dob": "2018-10-23T13:00:00.000Z",
-      "about": "All is well",
-      "id": 2
-    },
-    {
-      "email": "tesa@hotmail.com",
-      "name": "Tessa Mark",
-      "address": "Tessa Mark",
-      "dob": "1996-06-03T14:00:00.000Z",
-      "about": "Strathfield Tessa",
-      "id": 3
-    },
-    {
-      "email": "vivek@gmail.com",
-      "name": "Vivek",
-      "address": "new address",
+      "email": "dummy@gmail.com",
+      "name": "dummy",
+      "address": "20-34 street name",
       "dob": "2018-10-24T13:00:00.000Z",
-      "about": "New apartment",
-      "id": 4
-    },
-    {
-      "email": "Daru@gmail.com",
-      "name": "Daru",
-      "address": "Daru",
-      "dob": "2018-10-24T13:00:00.000Z",
-      "about": "Bombay Wala",
+      "about": "leoreal lipsum text repeat",
       "id": 5
-    },
-    {
-      "email": "nivin@gmail.com",
-      "name": "Nivin",
-      "address": "Nivin",
-      "dob": "2018-10-23T13:00:00.000Z",
-      "about": "All about my self is nothing",
-      "id": 6
     }
+
   ]
 }
