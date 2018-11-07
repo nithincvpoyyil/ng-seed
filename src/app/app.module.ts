@@ -6,13 +6,16 @@ import { RoutingModule } from './routing/app-routing.module';
 import { AppComponent } from './app.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { ConfigLoaderModule } from './config-loader/config-loader.module';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { APIInterceptorService } from './core/api/apiinterceptor.service';
 
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
-    BrowserModule, BrowserAnimationsModule, DashboardModule, RoutingModule,
+    BrowserModule, BrowserAnimationsModule, DashboardModule, RoutingModule, ConfigLoaderModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],

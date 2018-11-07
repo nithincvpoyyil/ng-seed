@@ -45,12 +45,14 @@ export class CreateRecordComponent implements OnInit, OnDestroy {
     this.router.navigateByUrl('/home');
   }
 
-  submitRecord() {
+  ngOnDestroy() {
+    if (this.addRecordSubscription) { this.addRecordSubscription.unsubscribe(); }
+  }
+  onformSubmit(event) {
+    event.preventDefault();
     this.addRecord$ = this.api.addRecord(<Record>this.recordForm.value);
     this.addRecordSubscription = this.addRecord$.subscribe();
-  }
-  ngOnDestroy() {
-    this.addRecordSubscription.unsubscribe();
+    return false;
   }
 
   getErrorMessage() {

@@ -4,7 +4,7 @@
   </span>
   <section class="new-employee-record-form" class="container" fxLayout="column" fxLayoutAlign="center center">
 
-    <form [formGroup]="recordForm">
+    <form [formGroup]="recordForm" (submit)="onformSubmit($event)">
 
       <mat-form-field>
         <input matInput placeholder="Enter your email" [formControl]="email" required>
@@ -30,7 +30,7 @@
       </mat-form-field>
 
       <div class="button-container">
-        <button type="button" [disabled]="!recordForm.valid" mat-flat-button (click)="submitRecord()" >Submit</button> <button mat-flat-button
+        <button type="submit" [disabled]="!recordForm.valid" mat-flat-button >Submit</button> <button mat-flat-button
           (click)="navigateToHome()">Cancel</button>
       </div>
     </form>
